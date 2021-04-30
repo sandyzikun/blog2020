@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="I. 单纯地下载一首歌曲先从单曲页面的网址 https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;song?id&#x3D;MUSICID  当中提取出单曲的musicid, 也就是?id&#x3D;之后的那一串数字 然后再访问网址 https:&#x2F;&#x2F;music.163.com&#x2F;song&#x2F;media&#x2F;outer&#x2F;url?id&#x3D;MUSICID.mp3  也就是把刚才的musicid填到?id&#x3D;和.mp3之间, 就可以下载单曲勒">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网易云音乐爬虫笔记">
+<meta property="og:url" content="http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/index.html">
+<meta property="og:site_name" content="调参札记">
+<meta property="og:description" content="I. 单纯地下载一首歌曲先从单曲页面的网址 https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;song?id&#x3D;MUSICID  当中提取出单曲的musicid, 也就是?id&#x3D;之后的那一串数字 然后再访问网址 https:&#x2F;&#x2F;music.163.com&#x2F;song&#x2F;media&#x2F;outer&#x2F;url?id&#x3D;MUSICID.mp3  也就是把刚才的musicid填到?id&#x3D;和.mp3之间, 就可以下载单曲勒">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-03-28T04:40:00.000Z">
+<meta property="article:modified_time" content="2019-11-22T12:09:16.501Z">
+<meta property="article:author" content="凪坤sandyzikun">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.jpeg">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/logo.jpeg" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpeg">
+          
+        
+    
+    <!-- title -->
+    <title>网易云音乐爬虫笔记</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/projects_url">项目</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/04/04/notes/SeleniumPY/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/03/21/notes/NPM/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&text=网易云音乐爬虫笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&title=网易云音乐爬虫笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&is_video=false&description=网易云音乐爬虫笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=网易云音乐爬虫笔记&body=Check out this article: http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&title=网易云音乐爬虫笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&title=网易云音乐爬虫笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&title=网易云音乐爬虫笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&title=网易云音乐爬虫笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&name=网易云音乐爬虫笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&t=网易云音乐爬虫笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#I-%E5%8D%95%E7%BA%AF%E5%9C%B0%E4%B8%8B%E8%BD%BD%E4%B8%80%E9%A6%96%E6%AD%8C%E6%9B%B2"><span class="toc-number">1.</span> <span class="toc-text">I. 单纯地下载一首歌曲</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.1.</span> <span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#II-%E4%B8%8B%E8%BD%BD%E6%AD%8C%E8%AF%8D"><span class="toc-number">2.</span> <span class="toc-text">II. 下载歌词</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        网易云音乐爬虫笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">调参札记</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-03-28T04:40:00.000Z" itemprop="datePublished">2019-03-28</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Notes-%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0/">Notes(代码笔记)</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="I-单纯地下载一首歌曲"><a href="#I-单纯地下载一首歌曲" class="headerlink" title="I. 单纯地下载一首歌曲"></a>I. 单纯地下载一首歌曲</h2><p>先从单曲页面的网址</p>
+<pre><code>https://music.163.com/#/song?id=MUSICID
+</code></pre>
+<p>当中提取出单曲的<code>musicid</code>, 也就是<code>?id=</code>之后的那一串数字</p>
+<p>然后再访问网址</p>
+<pre><code>https://music.163.com/song/media/outer/url?id=MUSICID.mp3
+</code></pre>
+<p>也就是把刚才的<code>musicid</code>填到<code>?id=</code>和<code>.mp3</code>之间, 就可以下载单曲勒!!!</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>若要下载<code>id</code>为<code>1350304559</code>的单曲, 就应当访问网址</p>
+<pre><code>https://music.163.com/song/media/outer/url?id=1350304559.mp3
+</code></pre>
+<p>就好了</p>
+<h2 id="II-下载歌词"><a href="#II-下载歌词" class="headerlink" title="II. 下载歌词"></a>II. 下载歌词</h2><p>和I类似地, 向<code>url</code></p>
+<pre><code>http://music.163.com/api/song/media?id=MUSICID
+</code></pre>
+<p>用你想要的<code>musicid</code>去发送请求</p>
+<p>会返回类似如下的一个<code>JSON</code>文件(以<code>id</code>为<code>1382047560</code>的单曲为例)</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;songStatus&quot;</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">&quot;lyricVersion&quot;</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="attr">&quot;lyric&quot;</span>: <span class="string">&quot;[00:00.000]初心依然 \n[00:03.467]初音未来x洛天依-BML同台应援曲- \n[00:09.023]词曲编：米库喵 \n[00:14.570]贝司：人形兎 \n[00:18.620]混音：Digifan \n[00:22.198]当眼睛适应黑暗（依） \n[00:25.010]当回家变得困难 \n[00:27.823]当漂泊无法靠岸 \n[00:30.623]当人生已走过一半 \n[00:33.548]当生活没有答案（初） \n[00:36.384]当遗忘成为习惯 \n[00:39.399]独自闪耀着的最后灯盏 \n[00:42.999]如今还能否点燃 \n[00:46.137]插画：深雪、柴艾、P子、浅蓝、淇酱 \n[00:51.819]视频：猫の梦（TS映画） \n[00:56.497]当梦想开始灰暗（依） \n[00:59.322]当身心疲惫不堪 \n[01:02.235]当期待成为负担 \n[01:05.115]当快乐已不再简单 \n[01:07.950]当笑容逐渐消散（初） \n[01:10.763]当泪水偶尔泛滥 \n[01:13.643]曾经追逐着的那份灿烂 \n[01:17.164]是否还初心依然 \n[01:19.807] \n[01:22.823]仰望（依） \n[01:24.623]粲然的星河 \n[01:26.176]曾是我们一笔笔勾勒 \n[01:28.954]展开了翅膀 \n[01:31.486]去梦在的地方 \n[01:34.331]回想（初） \n[01:36.176]一路的坎坷 \n[01:37.515]也由我们一步步踏过 \n[01:40.406]未熄的心火 \n[01:42.903]仍在传递永不陷落 \n[01:52.275] \n[01:56.539]当梦想开始灰暗（依） \n[01:59.305]当身心疲惫不堪 \n[02:02.219]当期待成为负担 \n[02:05.043]当快乐已不再简单 \n[02:07.957]当笑容逐渐消散（初） \n[02:10.747]当泪水偶尔泛滥 \n[02:13.593]曾经追逐着的那份灿烂 \n[02:17.159]是否还初心依然 \n[02:19.784] \n[02:21.157]也会彷徨失措（依） \n[02:23.080]也会难过 \n[02:25.792]不知该做什么（初） \n[02:28.661]不知为什么在（初）坚持着（合） \n[02:31.956]当你对我说（依） \n[02:34.376]不必太看重结果（初） \n[02:37.277]于这一刻拯救我（合） \n[02:42.161] \n[02:42.847]仰望（依） \n[02:44.635]粲然的星河 \n[02:46.143]曾是我们一笔笔勾勒 \n[02:49.022]展开了翅膀 \n[02:51.543]去梦在的地方 \n[02:54.265]回想（初） \n[02:56.076]一路的坎坷 \n[02:57.573]也由我们一步步踏过 \n[03:00.431]未熄的心火 \n[03:02.917]仍在传递永不落 \n[03:05.919] \n[03:06.258]体会着普通的喜怒哀乐（合） \n[03:09.396]一半生命一半装订成册 \n[03:12.231]即使未来要做一人行者 \n[03:15.099]也不相信真会迎来那世末 \n[03:17.957]在深海中少女独自漂泊 \n[03:20.747]拼尽全力用爱言叶诉说 \n[03:23.661]不在现实中逃避着自我 \n[03:26.439]哪怕消失也为你而歌&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;code&quot;</span>: <span class="number">200</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>提取其中<code>lyric</code>一项即可</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/projects_url">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#I-%E5%8D%95%E7%BA%AF%E5%9C%B0%E4%B8%8B%E8%BD%BD%E4%B8%80%E9%A6%96%E6%AD%8C%E6%9B%B2"><span class="toc-number">1.</span> <span class="toc-text">I. 单纯地下载一首歌曲</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.1.</span> <span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#II-%E4%B8%8B%E8%BD%BD%E6%AD%8C%E8%AF%8D"><span class="toc-number">2.</span> <span class="toc-text">II. 下载歌词</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&text=网易云音乐爬虫笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&title=网易云音乐爬虫笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&is_video=false&description=网易云音乐爬虫笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=网易云音乐爬虫笔记&body=Check out this article: http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&title=网易云音乐爬虫笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&title=网易云音乐爬虫笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&title=网易云音乐爬虫笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&title=网易云音乐爬虫笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&name=网易云音乐爬虫笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://sandyzikun.github.io/2019/03/28/notes/NeteaseCrawler/&t=网易云音乐爬虫笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-???
+    凪坤sandyzikun
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/projects_url">项目</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"log":false});</script></body>
+</html>
