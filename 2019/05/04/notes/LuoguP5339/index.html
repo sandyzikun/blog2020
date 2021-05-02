@@ -9,18 +9,16 @@
     <meta name="description" content="本题解为搬运Forever誓大佬(LuoguID: 52540)的原创题解 也请多多支持原作: https:&#x2F;&#x2F;blog.csdn.net&#x2F;forever_shi&#x2F;article&#x2F;details&#x2F;89814096&#x2F; 同时为中文、图片和代码的统一测试  题意给你一个n，表示你要选出一个n个人组成的队列。有四种不同的人，人数分别是a, b, c, d个，保证a + b + c + d &gt;&#x3D; n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TJOI2019-D1T3 唱、跳、rap和篮球">
-<meta property="og:url" content="http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/index.html">
+<meta property="og:url" content="https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/index.html">
 <meta property="og:site_name" content="调参札记">
 <meta property="og:description" content="本题解为搬运Forever誓大佬(LuoguID: 52540)的原创题解 也请多多支持原作: https:&#x2F;&#x2F;blog.csdn.net&#x2F;forever_shi&#x2F;article&#x2F;details&#x2F;89814096&#x2F; 同时为中文、图片和代码的统一测试  题意给你一个n，表示你要选出一个n个人组成的队列。有四种不同的人，人数分别是a, b, c, d个，保证a + b + c + d &gt;&#x3D; n">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/LuoguP5339/Equation.jpeg">
 <meta property="article:published_time" content="2019-05-04T07:46:26.000Z">
-<meta property="article:modified_time" content="2019-11-17T07:28:02.489Z">
+<meta property="article:modified_time" content="2021-05-02T13:02:13.578Z">
 <meta property="article:author" content="凪坤sandyzikun">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="搬运">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/LuoguP5339/Equation.jpeg">
     
     
         
@@ -56,8 +54,7 @@
     
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -96,17 +93,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&text=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&is_video=false&description=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=TJOI2019-D1T3 唱、跳、rap和篮球&body=Check out this article: http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&name=TJOI2019-D1T3 唱、跳、rap和篮球&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&t=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&text=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&is_video=false&description=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TJOI2019-D1T3 唱、跳、rap和篮球&body=Check out this article: https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&name=TJOI2019-D1T3 唱、跳、rap和篮球&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&t=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -169,8 +166,8 @@
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>难得自己做出来道题。</p>
 <p>首先先考虑一些暴力的dp想法。我们可能会想记录当前这四种人分别站到队伍里了多少个，然后当前已经有了这四种人中连续的几种人的方案数。很显然的是，空间和时间都不允许。</p>
 <p>于是我们换个思路，我们直接做不好做，我们就考虑用总方案数减去不合法的方案数。我们先考虑如何求总方案数。我们设<code>dp[i][j]</code>表示考虑了前<code>i</code>种人，已经占了<code>j</code>个位置的方案数。在转移时，我们并不能直接累加，因为我们在队伍里放进去若干个当前这种人的时候，位置是可以任意选的，所以要乘上一个组合数。我们设第<code>i</code>种人可以用<code>num[i]</code>个，那么可以列出转移方程式：</p>
-<p><img src="LuoguP5339/Equation.jpeg"></p>
-<p>这样我们就可以在<code>O(n^2)</code>的时间内算出这个总方案数了。</p>
+<!--![](LuoguP5339/Equation.jpeg)-->
+<script type="math/tex; mode=display">dp_{i , j} = \sum_{k = max(0 , j - num_i)}^j dp_{i - 1 , k} * C_{n - j}^{j - k}</script><p>这样我们就可以在<code>O(n^2)</code>的时间内算出这个总方案数了。</p>
 <p>接下来我们考虑减去不合法的方案，我们发现可以容斥，我们用总方案数减去至少有一处出现不合法，其余位置随便放的方案数，加上至少有两处不合法，其他位置随便放的方案数，以此类推。我们已经会算<code>x</code>个位置，每种人可以用的数量已知的情况下怎么算总方案数，那么我们就考虑如何算有<code>n</code>个位置，选出<code>k</code>连续的四个位置的方案数。这个其实也是一个经典的组合数模型，我们可以预先对于每一组放上三个，这样就变成了<code>C_&#123;n-k*3&#125;^k</code>了。这样就可以计算出答案了。</p>
 <p>复杂度的话，是<code>O(n^3)</code>的，实际来分析一下常数，应该会发现容斥的枚举次数上限是<code>n/4</code>，内层的话要枚举<code>4</code>次，每次枚举一个当前占了的位置数和上一次占了的位置数，这两个的差不超过<code>num[i]</code>，实际常数应该是不大的。再加上时限是<code>4</code>秒，就这么跑过去了，而且实测的话，似乎最慢的点也不到一秒。</p>
 <h2 id="标程-by-Froever誓"><a href="#标程-by-Froever誓" class="headerlink" title="标程 by Froever誓"></a>标程 by <code>Froever誓</code></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,a,b,c,d,shu[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> mod=<span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans,dp[<span class="number">5</span>][<span class="number">1010</span>],C[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d%d&quot;</span>,&amp;n,&amp;a,&amp;b,&amp;c,&amp;d);</span><br><span class="line">	C[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		C[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;++j)</span><br><span class="line">		C[i][j]=(C[i<span class="number">-1</span>][j]+C[i<span class="number">-1</span>][j<span class="number">-1</span>])%mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> mn=<span class="built_in">min</span>(a,b);</span><br><span class="line">	mn=<span class="built_in">min</span>(mn,c);</span><br><span class="line">	mn=<span class="built_in">min</span>(mn,d);</span><br><span class="line">	mn=<span class="built_in">min</span>(mn,n/<span class="number">4</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=mn;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> opt=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(i&amp;<span class="number">1</span>)</span><br><span class="line">		opt=<span class="number">-1</span>;</span><br><span class="line">		<span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));</span><br><span class="line">		shu[<span class="number">1</span>]=a-i;</span><br><span class="line">		shu[<span class="number">2</span>]=b-i;</span><br><span class="line">		shu[<span class="number">3</span>]=c-i;</span><br><span class="line">		shu[<span class="number">4</span>]=d-i;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=shu[<span class="number">1</span>];++j)</span><br><span class="line">		dp[<span class="number">1</span>][j]=C[n<span class="number">-4</span>*i][j];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=<span class="number">4</span>;++j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;=n;++k)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="built_in">max</span>(<span class="number">0</span>,k-shu[j]);l&lt;=k&amp;&amp;n<span class="number">-4</span>*i-l&gt;=<span class="number">0</span>;++l)</span><br><span class="line">				dp[j][k]=(dp[j][k]+dp[j<span class="number">-1</span>][l]*C[n<span class="number">-4</span>*i-l][k-l]%mod)%mod;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		ans=(ans+opt*dp[<span class="number">4</span>][n<span class="number">-4</span>*i]*C[n<span class="number">-3</span>*i][i]%mod+mod)%mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -204,17 +201,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&text=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&is_video=false&description=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=TJOI2019-D1T3 唱、跳、rap和篮球&body=Check out this article: http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&name=TJOI2019-D1T3 唱、跳、rap和篮球&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&t=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&text=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&is_video=false&description=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TJOI2019-D1T3 唱、跳、rap和篮球&body=Check out this article: https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&title=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&name=TJOI2019-D1T3 唱、跳、rap和篮球&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://sandyzikun.github.io/2019/05/04/notes/LuoguP5339/&t=TJOI2019-D1T3 唱、跳、rap和篮球"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -308,5 +305,20 @@
 <!-- Disqus Comments -->
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"log":false});</script></body>
 </html>
