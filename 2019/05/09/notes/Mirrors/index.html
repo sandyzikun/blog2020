@@ -12,11 +12,11 @@
 <meta property="og:url" content="https://sandyzikun.github.io/2019/05/09/notes/Mirrors/index.html">
 <meta property="og:site_name" content="调参札记">
 <meta property="og:description" content="都不多讲, 简单做个记录。 国内高匿&#x2F;免费HTTP代理IP:  快代理: https:&#x2F;&#x2F;www.kuaidaili.com&#x2F;free&#x2F; 西刺代理: https:&#x2F;&#x2F;www.xicidaili.com&#x2F;nn&#x2F;  镜像以&#x2F;GnuEmacs&#x2F;windows&#x2F;emacs-25&#x2F;下载地址为例。 国内常见的有:  清华镜像: https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;gnu&#x2F;">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale">
 <meta property="article:published_time" content="2019-05-09T04:40:00.000Z">
-<meta property="article:modified_time" content="2020-01-10T11:21:00.501Z">
+<meta property="article:modified_time" content="2021-05-04T04:56:47.287Z">
 <meta property="article:author" content="凪坤sandyzikun">
-<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="Notes(代码笔记)">
 <meta name="twitter:card" content="summary">
     
     
@@ -63,13 +63,13 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">首页</a></li>
+          <li><a href="/">Home (首页)</a></li>
          
-          <li><a href="/about/">关于</a></li>
+          <li><a href="/about/">About (关于)</a></li>
          
-          <li><a href="/archives/">归档</a></li>
+          <li><a href="/archives/">Writing (归档)</a></li>
          
-          <li><a href="/projects_url">项目</a></li>
+          <li><a href="/projects_url">Projects (项目)</a></li>
         
       </ul>
     </span>
@@ -85,10 +85,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">上一篇</span>
-      <span id="i-next" class="info" style="display:none;">下一篇</span>
-      <span id="i-top" class="info" style="display:none;">返回顶部</span>
-      <span id="i-share" class="info" style="display:none;">分享文章</span>
+      <span id="i-prev" class="info" style="display:none;">Previous post (上一篇)</span>
+      <span id="i-next" class="info" style="display:none;">Next post (下一篇)</span>
+      <span id="i-top" class="info" style="display:none;">Back to top (返回顶部)</span>
+      <span id="i-share" class="info" style="display:none;">Share post (分享文章)</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -139,16 +139,11 @@
 
 
       
-    <div class="article-category">
-        <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/Notes-%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0/">Notes(代码笔记)</a>
-    </div>
-
 
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
+        <a class="tag-link-link" href="/tags/Notes-%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0/" rel="tag">Notes(代码笔记)</a>
     </div>
 
 
@@ -195,13 +190,13 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">首页</a></li>
+          <li><a href="/">Home (首页)</a></li>
          
-          <li><a href="/about/">关于</a></li>
+          <li><a href="/about/">About (关于)</a></li>
          
-          <li><a href="/archives/">归档</a></li>
+          <li><a href="/archives/">Writing (归档)</a></li>
          
-          <li><a href="/projects_url">项目</a></li>
+          <li><a href="/projects_url">Projects (项目)</a></li>
         
       </ul>
     </div>
@@ -228,10 +223,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu (目录)</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC (菜单)</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share (分享)</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top (返回顶部)</a>
     </div>
 
   </div>
@@ -250,13 +245,13 @@
     <nav>
       <ul>
          
-          <li><a href="/">首页</a></li>
+          <li><a href="/">Home (首页)</a></li>
          
-          <li><a href="/about/">关于</a></li>
+          <li><a href="/about/">About (关于)</a></li>
          
-          <li><a href="/archives/">归档</a></li>
+          <li><a href="/archives/">Writing (归档)</a></li>
          
-          <li><a href="/projects_url">项目</a></li>
+          <li><a href="/projects_url">Projects (项目)</a></li>
         
       </ul>
     </nav>
@@ -287,7 +282,7 @@
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard (复制到粘贴板) !\">";
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
@@ -298,7 +293,7 @@
       }
     });
     clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.trigger.setAttribute('aria-label', "Copied (复制成功) !");
       e.clearSelection();
     })
   })
