@@ -1747,7 +1747,8 @@ pre {
   }
 }
 code,
-kbd {
+kbd,
+span.inline_tags {
   padding: 2px 4px;
   border-width: 1px;
   border-radius: 4px;
@@ -1762,6 +1763,12 @@ kbd {
   border-style: solid;
   border-color: #556c92;
   background-color: #f8f4ef;
+}
+span.inline_tags::before {
+  content: "「";
+}
+span.inline_tags::after {
+  content: "】";
 }
 @media screen and (min-width: 900px) {
   .content .post .content a,
