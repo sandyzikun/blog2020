@@ -6,15 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="稍微写一点 dp (Dynamic Programming, 动态规划) 相关的… 说实话，从接触dp的高一上学期，一直到现在写关于dp的大一下学期，这四年从来都没有 真 正 理 解 dp，所以下面只是说一个能做出来dp基础题目的人是如何把那些题目水过去的。 先说说dp的几种基础问题类型：  最长增减子序贯  LIS: Longest Increasing Subsequence, 最长上升子序贯">
+    <meta name="keywords" content="Bilibili,哔哩哔哩,哔哩哔哩动画,哔哩哔哩弹幕网,弹幕视频,B站,弹幕,字幕,AMV,MAD,MTV,ANIME,动漫,动漫音乐,游戏,游戏解说,二次元,游戏视频,ACG,galgame,动画,番组,新番,初音,洛天依,vocaloid,日本动漫,国产动漫,手机游戏,网络游戏,电子竞技,ACG燃曲,ACG神曲,追新番,新番动漫,新番吐槽,巡音,镜音双子,千本樱,初音MIKU,舞蹈MMD,MIKUMIKUDANCE,洛天依原创曲,洛天依翻唱曲,洛天依投食歌,洛天依MMD,vocaloid家族,OST,BGM,动漫歌曲,日本动漫音乐,宫崎骏动漫音乐,动漫音乐推荐,燃系mad,治愈系mad,MAD MOVIE,MAD高燃">
+    <meta name="description" content="稍微写一点 dp (Dynamic Programming, 动态规划) 相关的… 说实话，从接触dp的高一上学期，一直到现在写关于dp的大一下学期，这四年从来都没有 真⭐正⭐理⭐解 dp，所以下面只是说一个能做出来dp基础题目的人是如何把那些题目水过去的。 先说说dp的几种基础问题类型：  最长增减子序贯  LIS: Longest Increasing Subsequence, 最长上升子序贯">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DynamicProgramming">
 <meta property="og:url" content="https://sandyzikun.github.io/2021/05/09/notes/DynamicProgramming/index.html">
 <meta property="og:site_name" content="调参札记">
-<meta property="og:description" content="稍微写一点 dp (Dynamic Programming, 动态规划) 相关的… 说实话，从接触dp的高一上学期，一直到现在写关于dp的大一下学期，这四年从来都没有 真 正 理 解 dp，所以下面只是说一个能做出来dp基础题目的人是如何把那些题目水过去的。 先说说dp的几种基础问题类型：  最长增减子序贯  LIS: Longest Increasing Subsequence, 最长上升子序贯">
+<meta property="og:description" content="稍微写一点 dp (Dynamic Programming, 动态规划) 相关的… 说实话，从接触dp的高一上学期，一直到现在写关于dp的大一下学期，这四年从来都没有 真⭐正⭐理⭐解 dp，所以下面只是说一个能做出来dp基础题目的人是如何把那些题目水过去的。 先说说dp的几种基础问题类型：  最长增减子序贯  LIS: Longest Increasing Subsequence, 最长上升子序贯">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-05-09T07:28:22.000Z">
-<meta property="article:modified_time" content="2021-05-09T08:25:33.450Z">
+<meta property="article:modified_time" content="2021-05-09T15:45:33.343Z">
 <meta property="article:author" content="凪坤sandyzikun">
 <meta property="article:tag" content="Notes(代码笔记)">
 <meta name="twitter:card" content="summary">
@@ -75,6 +76,8 @@
     <br/>
     <span id="actions">
       <ul>
+        
+        <li><a class="icon" href="/2021/05/10/essays/2021-0510/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" href="/2021/05/09/notes/MathJax/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -150,7 +153,7 @@
 
   <div class="content" itemprop="articleBody">
     <p>稍微写一点 <code>dp (Dynamic Programming, 动态规划)</code> 相关的…</p>
-<p>说实话，从接触dp的高一上学期，一直到现在写关于dp的大一下学期，这四年从来都没有 真 正 理 解 dp，所以下面只是说一个能做出来dp基础题目的人是如何把那些题目水过去的。</p>
+<p>说实话，从接触dp的高一上学期，一直到现在写关于dp的大一下学期，这四年从来都没有 真⭐正⭐理⭐解 dp，所以下面只是说一个能做出来dp基础题目的人是如何把那些题目水过去的。</p>
 <p>先说说dp的几种基础问题类型：</p>
 <ol>
 <li><p>最长增减子序贯</p>
@@ -181,17 +184,17 @@
 <h3 id="Other-Info"><a href="#Other-Info" class="headerlink" title="Other Info"></a>Other Info</h3><h4 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h4><p>第一个行一个正整数 $r$ ，表示行的数目。</p>
 <p>后面每行为这个数字金字塔特定行包含的整数。</p>
 <h4 id="Output-Format"><a href="#Output-Format" class="headerlink" title="Output Format"></a>Output Format</h4><p>单独的一行，包含那个可能得到的最大的和。</p>
-<h4 id="IO-Example"><a href="#IO-Example" class="headerlink" title="IO Example"></a>IO Example</h4><p><strong>Input #1</strong></p>
-<pre><code>5
+<h4 id="IO-Example"><a href="#IO-Example" class="headerlink" title="IO Example"></a>IO Example</h4><pre><code>In [1]:
+5
 7
 3 8
 8 1 0
 2 7 4 4
 4 5 2 6 5
-</code></pre><p><strong>Output #1</strong></p>
-<pre><code>30
+Out[1]:
+30
 </code></pre><h4 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h4><p>「数据范围：对于 $100\%$ 的数据， $1 \le r \le 1000$ ，所有输入在 $[0, 100]$ 范围内。</p>
-<p>题目翻译来自NOCOW / USACO Training Section 1.5 / IOI1994 Day1T1</p>
+<p>题目翻译来自 NOCOW / USACO Training Section 1.5 / IOI1994 Day1T1</p>
 <h3 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env Python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dp_recursion</span>(<span class="params">k, l</span>):</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="built_in">max</span>(dp_recursion(k + <span class="number">1</span>, l), dp_recursion(k + <span class="number">1</span>, l + <span class="number">1</span>)) + arr[k, l]) <span class="keyword">if</span> k &lt; r <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    r = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">    arr = np.zeros((r, r))</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(r):</span><br><span class="line">        arr[ k , : (k + <span class="number">1</span>) ] += [ <span class="built_in">int</span>(each) <span class="keyword">for</span> each <span class="keyword">in</span> <span class="built_in">input</span>().split() ]</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">int</span>(dp_recursion(<span class="number">0</span>, <span class="number">0</span>)))</span><br></pre></td></tr></table></figure>
 
   </div>
