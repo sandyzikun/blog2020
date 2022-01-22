@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Stunning-Happiness",
+        "url": "https://github.com/sandyzikun/stunning-happiness/",
+        "desc": "早期的机器学习作品, 包括鸢尾花的三元分类"
+    },
+    {
+        "name": "VectorFly",
+        "url": "https://github.com/sandyzikun/VectorFly/",
+        "desc": "我的代码仓库, 包括网络爬虫和深度学习之类的"
+    },
+    {
+        "name": "Hajime-Linalg",
+        "url": "https://github.com/sandyzikun/hajime-linalg/",
+        "desc": "一个简单的线性代数Python模块, 最多能实现本科的线代知识"
+    },
+    {
+        "name": "",
+        "url": "",
+        "desc": ") 更多项目尚在爆肝的征途上...<h1>友情链接</h1>"
+    },
+    {
+        "name": "CZN",
+        "url": "https://blog.csdn.net/qq_35152804/",
+        "desc": "巨神曹智宁的CSDN博客"
+    },
+    {
+        "name": "JXP",
+        "url": "https://www.luogu.org/blog/jxp12345678/",
+        "desc": "巨神纪鑫鹏的洛谷博客"
+    },
+    {
+        "name": "火星大王的蒟蒻云",
+        "url": "http://juruoyun.top/",
+        "desc": "巨神李俊彦从零开始手工开发的网站与博客"
+    },
+    {
+        "name": "Forever誓",
+        "url": "https://blog.csdn.net/forever_shi/",
+        "desc": "巨神庞天祥的CSDN博客"
+    },
+    {
+        "name": "wddwjlss",
+        "url": "https://blog.csdn.net/wddwjlss/",
+        "desc": "巨神魏杰伦的CSDN博客"
+    },
+    {
+        "name": "Fros1er",
+        "url": "https://fros1er.github.io/",
+        "desc": "巨神徐延楷的Hexo博客"
+    },
+    {
+        "name": "liuzhangfeiabc",
+        "url": "https://blog.csdn.net/liuzhangfeiabc/",
+        "desc": "巨神张艺缤的CSDN博客"
+    }
+]

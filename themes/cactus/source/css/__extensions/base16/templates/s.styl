@@ -1,0 +1,97 @@
+/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
+
+@media (prefers-color-scheme: dark)
+    .highlight
+        color: $base04
+        background: $base00
+
+        .code
+            .comment, .quote
+                color: $base02
+
+            /* Solarized Green */
+            .keyword, .selector-tag, .addition
+                color: $base-green
+
+            /* Solarized Cyan */
+            .number, .string,
+            .meta .meta-string,
+            .literal, .doctag, .regexp
+                color: $base-cyan
+
+            /* Solarized Blue */
+            .title, .section, .name,
+            .selector-id, .selector-class
+                color: $base-blue
+
+            /* Solarized Yellow */
+            .attribute, .attr, .variable, .type,
+            .template-variable, .class .title
+                color: $base-yellow
+
+            /* Solarized Orange */
+            .symbol, .bullet, .subst,
+            .meta, .meta .keyword, .link,
+            .selector-attr, .selector-pseudo
+                color: $base-orange
+
+            /* Solarized Red */
+            .built_in, .deletion
+                color: $base-red
+
+            .formula
+                background: $base01
+
+            .emphasis
+                font-style: italic
+
+            .strong
+                font-weight: bold
+
+@media (prefers-color-scheme: light)
+    .highlight
+        color: $base03
+        background: $base07
+
+        .code
+            .comment, .quote
+                color: $base05
+
+            /* Solarized Green */
+            .keyword, .selector-tag, .addition
+                color: $base-green
+
+            /* Solarized Cyan */
+            .number, .string,
+            .meta .meta-string,
+            .literal, .doctag, .regexp
+                color: $base-cyan
+
+            /* Solarized Blue */
+            .title, .section, .name,
+            .selector-id, .selector-class
+                color: $base-blue
+
+            /* Solarized Yellow */
+            .attribute, .attr, .variable, .type,
+            .template-variable, .class .title
+                color: $base-yellow
+
+            /* Solarized Orange */
+            .symbol, .bullet, .subst,
+            .meta, .meta .keyword, .link,
+            .selector-attr, .selector-pseudo
+                color: $base-orange
+
+            /* Solarized Red */
+            .built_in, .deletion
+                color: $base-red
+
+            .formula
+                background: $base06
+
+            .emphasis
+                font-style: italic
+
+            .strong
+                font-weight: bold

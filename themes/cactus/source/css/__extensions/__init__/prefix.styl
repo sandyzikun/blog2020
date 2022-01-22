@@ -1,0 +1,12 @@
+if hexo-config("extensions.base16") && hexo-config("extensions.base16.enable")
+  @import "../base16/colors/" + hexo-config("extensions.base16.color")
+  $base-red = $base08
+  $base-orange = $base09
+  $base-yellow = $base0a
+  $base-green = $base0b
+  $base-cyan = $base0c
+  $base-blue = $base0d
+  $base-violet = $base0e
+  $base-purple = $base0e
+  $base-magenta = $base0f
+  @import "../base16/schemes/" + hexo-config("extensions.base16.scheme")
